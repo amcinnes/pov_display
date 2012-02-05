@@ -1,5 +1,4 @@
 import sys
-sys.path = ['/home/angus/printer_control/pyusb']+sys.path
 import usb.core
 import usb.util
 import time
