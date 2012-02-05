@@ -322,7 +322,7 @@ EXTMEMOPTS =
 #    -Map:      create map file
 #    --cref:    add cross reference to  map file
 LDFLAGS  = -Wl,-Map=$(TARGET).map,--cref
-LDFLAGS += -Wl,--relax
+#LDFLAGS += -Wl,--relax
 LDFLAGS += -Wl,--gc-sections
 LDFLAGS += -Wl,-mavr51
 LDFLAGS += $(EXTMEMOPTS)
@@ -513,7 +513,7 @@ gccversion :
 
 # Program the device.
 program: $(TARGET).hex $(TARGET).eep
-	/home/angus/printer_control/teensy_loader_cli/teensy_loader_cli -mmcu=atmega32u4 -w $(TARGET).hex
+	../teensy_loader_cli/teensy_loader_cli -mmcu=atmega32u4 -w $(TARGET).hex
 
 # Generate avr-gdb config/init file which does the following:
 #     define the reset signal, load the target file, connect to target, and set
